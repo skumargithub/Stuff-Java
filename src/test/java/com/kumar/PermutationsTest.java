@@ -25,13 +25,17 @@ public class PermutationsTest {
     @Test
     public void p0()
     {
+        // nPr = n! / (n - r)!
+        //
+        // nP0 = n! / n!
+
         List<Integer> input = new ArrayList<>();
         input.add(0);
         input.add(1);
         input.add(2);
 
         List<List<Integer>> result = Permutations.permutations(input, 0);
-        assertTrue( result.size() == 0);
+        assertTrue( result.size() == 1);
     }
 
     @Test

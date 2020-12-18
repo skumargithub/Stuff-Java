@@ -2,12 +2,19 @@ package com.kumar;
 
 import java.util.*;
 
+// nPr = n! / (n - r)!
 public class Permutations {
     public static List<List<Integer>> permutations(List<Integer> input, int r) {
         List<List<Integer>> result = new ArrayList<>();
 
-        // Cannot pick r out of input less than r and nothing to pick if r == 0
-        if(input.size() < r || r == 0)  return result;
+        // Cannot pick r out of input less than r
+        if(input.size() < r)  return result;
+
+        // Nothing to pick if r == 0 (return empty)
+        if(r == 0)  {
+            result.add(new ArrayList<Integer>());
+            return result;
+        }
 
         // Pick 1 element from the input
         // Simply each element
