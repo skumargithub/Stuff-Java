@@ -15,10 +15,12 @@ public class QuickSelectTest {
 
     @Test
     public void c0() {
-        final int ARRAY_SIZE = 100;
+        Random random = new Random();
+
+        final int ARRAY_SIZE = getRandomNumber(random, 100, 1000);
+        System.err.println("Array size: " + ARRAY_SIZE);
         int[] input = new int[ARRAY_SIZE];
 
-        Random random = new Random();
         for(int i = 0; i < ARRAY_SIZE; ++i) {
             input[i] = getRandomNumber(random, -1000, 1000);
         }
