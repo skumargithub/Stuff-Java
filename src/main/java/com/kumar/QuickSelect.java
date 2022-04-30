@@ -10,10 +10,14 @@ public class QuickSelect {
 //        System.err.println(Arrays.toString(A));
 //        System.err.println(partition(A, 0, A.length - 1));
 //        System.err.println(Arrays.toString(A));
-        for(int k = 0; k < A.length; ++k) {
-            System.err.println(quickSelect(A, k, 0, A.length - 1));
-            System.err.println(Arrays.toString(A));
-        }
+//        for(int k = 0; k < A.length; ++k) {
+//            System.err.println(quickSelect(A, k, 0, A.length - 1));
+//            System.err.println(Arrays.toString(A));
+//        }
+
+        System.err.println(Arrays.toString(A));
+        quickSort(A, 0, A.length - 1);
+        System.err.println(Arrays.toString(A));
     }
 
     public static int quickSelect(int[] A, int k, int start, int end) {
@@ -24,6 +28,14 @@ public class QuickSelect {
         } else {
             return quickSelect(A, k, part + 1, end);
         }
+    }
+
+    public static void quickSort(int[] A, int start, int end) {
+        if(start >= end) return;
+
+        int part = partition(A, start, end);
+        quickSort(A, start, part - 1);
+        quickSort(A, part + 1, end);
     }
 
     // Use the last element A[end] as the pivot
@@ -52,4 +64,8 @@ public class QuickSelect {
 
         return lP;
     }
+
+    // And the Bardo endeth!
+    // Got Meta offer yesterday (April 28/2022)
+    // Thanks for everything!
 }
